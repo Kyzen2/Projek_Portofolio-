@@ -1,0 +1,734 @@
+/* Reset Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #696969;
+    color: #333;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+  
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  h2 {
+    margin-bottom: 20px;
+    font-size: 2rem;
+  }
+  
+  h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+  
+  /* Navbar */
+  #navbar {
+    background-color: #333;
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+  
+  .navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+  }
+  
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+  }
+  
+  .nav-links li {
+    margin-right: 25px;
+  }
+  
+  .nav-links li a {
+    color: white;
+    font-weight: 500;
+    text-transform: uppercase;
+    transition: color 0.3s ease;
+  }
+  
+  .nav-links li a:hover {
+    color: #ff6347;
+  }
+  
+  .logo a {
+    font-size: 1.8rem;
+    color: #fff;
+    font-weight: 600;
+  }
+  
+  .menu-toggle {
+    display: none;
+    cursor: pointer;
+  }
+  
+  .menu-toggle .bar {
+    width: 25px;
+    height: 4px;
+    margin: 5px;
+    background-color: #fff;
+    border-radius: 5px;
+    transition: 0.3s;
+  }
+  
+  /* Hero Section */
+  .hero-section {
+    background: url('images/hero-bg.jpg') no-repeat center center/cover;
+    height: 100vh;
+    color: white;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+  }
+  
+  .hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+    animation: fadeIn 2s ease-in-out;
+  }
+  
+  .hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    animation: fadeIn 3s ease-in-out;
+  }
+  
+  .btn-primary {
+    background-color: #ff6347;
+    color: white;
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    border-radius: 25px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(255, 99, 71, 0.3);
+  }
+  
+  .btn-primary:hover {
+    transform: translateY(-3px);
+    background-color: #e54b3c;
+    box-shadow: 0 6px 20px rgba(255, 99, 71, 0.5);
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  /* About Section */
+  .about {
+    background-color: #fff;
+    padding: 80px 0;
+  }
+  
+  .about p {
+    font-size: 1.1rem;
+    max-width: 900px;
+    margin: 0 auto;
+    line-height: 1.8;
+  }
+  
+  /* Skills Section */
+.skills {
+  background-color: #222222;
+  padding: 60px 20px; /* Ruang atas, bawah, kiri, kanan */
+  text-align: center; /* Pusatkan teks judul */
+}
+
+.skills h2 {
+  font-size: 3rem;
+  margin-bottom: 40px;
+  text-transform: uppercase;
+  color: #ffdd57;
+  position: relative;
+}
+
+.skills h2::after {
+  content: "";
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, #ff6347, #ffdd57);
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.skills-list {
+  display: flex; /* Membuat kotak sejajar horizontal */
+  justify-content: space-around; /* Jarak antar kotak */
+  gap: 20px; /* Jarak antara kotak */
+  max-width: 1200px;
+  margin: 0 auto; /* Pusatkan container */
+  flex-wrap: wrap; /* Kotak akan menumpuk jika layar kecil */
+}
+
+.skill {
+  flex: 1 1 calc(33.333% - 20px); /* Tiga kolom (33.33% setiap kotak) */
+  background: linear-gradient(135deg, #444, #555);
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  color: #fff;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  text-align: left;
+  max-width: 360px;
+}
+
+.skill:hover {
+  transform: scale(1.05); /* Efek zoom pada hover */
+  box-shadow: 0 10px 20px rgba(255, 99, 71, 0.5);
+}
+
+.skill h3 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+}
+
+.skill ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.skill ul li {
+  font-size: 1rem;
+  margin: 5px 0;
+  line-height: 1.5;
+}
+
+/* Responsif untuk layar kecil */
+@media (max-width: 768px) {
+  .skills-list {
+    flex-direction: column; /* Kotak menjadi vertikal pada layar kecil */
+    align-items: center;
+  }
+
+  .skill {
+    flex: 1 1 100%; /* Lebar penuh untuk setiap kotak */
+    max-width: 100%; /* Tidak ada batas lebar */
+  }
+}
+  
+  
+  /* Footer */
+  #footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+  }
+  
+  /* Responsiveness */
+  @media (max-width: 768px) {
+    .nav-links {
+      display: none;
+      width: 100%;
+      text-align: center;
+    }
+  
+    .nav-links.active {
+      display: block;
+    }
+  
+    .navbar-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  
+    .navbar-container .logo {
+      font-size: 1.5rem;
+    }
+  
+    .menu-toggle {
+      display: block;
+      cursor: pointer;
+    }
+  
+    .skills-list {
+      grid-template-columns: 1fr;
+    }
+  
+    .project-cards {
+      grid-template-columns: 1fr;
+    }
+  
+    .hero-section {
+      height: 80vh;
+    }
+  
+    .btn-primary {
+      font-size: 1.1rem;
+      padding: 12px 24px;
+    }
+  }
+  
+  /* Hero Section */
+.hero-section {
+  background: url('images/hero-bg.jpg') no-repeat center center/cover;
+  height: 100vh;
+  color: white;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Gradient Overlay */
+.hero-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.9));
+  z-index: 1;
+}
+
+/* Hero Content */
+.hero-content {
+  position: relative;
+  z-index: 2;
+  animation: fadeIn 2s ease-in-out;
+}
+
+.hero-content h1 {
+  font-size: 4rem;
+  margin-bottom: 20px;
+  position: relative;
+  display: inline-block;
+}
+
+.hero-content h1::after {
+  content: "";
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, #ff6347, #ffdd57);
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  animation: underline 1.5s infinite alternate;
+}
+
+.hero-content p {
+  font-size: 1.3rem;
+  margin-bottom: 30px;
+  animation: fadeIn 2.5s ease-in-out;
+}
+
+/* Underline Animation */
+@keyframes underline {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+/* Button with Clean Gradient Hover */
+.btn-primary {
+  display: inline-block;
+  background: linear-gradient(135deg, #ff6347, #ffdd57);
+  color: white;
+  padding: 15px 30px;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 50px;
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 25px rgba(255, 99, 71, 0.5);
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.btn-primary::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.2);
+  transition: left 0.4s ease-in-out;
+  z-index: -1;
+}
+
+.btn-primary:hover::before {
+  left: 0;
+}
+
+.btn-primary:hover {
+  transform: translateY(-3px);
+  background: linear-gradient(135deg, #e54b3c, #ffcc00);
+  box-shadow: 0 15px 30px rgba(255, 99, 71, 0.7);
+}
+
+
+/* Decorative Circles */
+.hero-section::after {
+  content: "";
+  position: absolute;
+  top: 20%;
+  right: 15%;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, #ff6347, transparent);
+  border-radius: 50%;
+  opacity: 0.5;
+  animation: float 6s infinite alternate;
+}
+
+@keyframes float {
+  from {
+    transform: translateY(-20px);
+  }
+  to {
+    transform: translateY(20px);
+  }
+}
+
+/* Keyframe Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Particles (Optional Enhancement) */
+.particles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.particles span {
+  position: absolute;
+  bottom: 0;
+  width: 10px;
+  height: 10px;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  animation: moveParticles 5s infinite;
+}
+
+.particles span:nth-child(2) {
+  left: 30%;
+  animation-duration: 7s;
+  width: 8px;
+  height: 8px;
+}
+
+.particles span:nth-child(3) {
+  left: 60%;
+  animation-duration: 10s;
+  width: 12px;
+  height: 12px;
+}
+
+@keyframes moveParticles {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100vh);
+    opacity: 0;
+  }
+}
+
+/* Responsive for Smaller Screens */
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 2.5rem;
+  }
+  
+  .hero-content p {
+    font-size: 1rem;
+  }
+
+  .btn-primary {
+    padding: 12px 24px;
+    font-size: 1rem;
+  }
+}
+
+/* Section General Styling */
+.section {
+  padding: 80px 20px;
+  text-align: center;
+  color: white;
+}
+
+.section h2 {
+  font-size: 3rem;
+  margin-bottom: 40px;
+  position: relative;
+  display: inline-block;
+  text-transform: uppercase;
+  color: #ffdd57;
+}
+
+.section h2::after {
+  content: "";
+  width: 50%;
+  height: 4px;
+  background: linear-gradient(90deg, #ff6347, #ffdd57);
+  position: absolute;
+  bottom: -10px;
+  left: 25%;
+}
+
+/* Tentang Saya */
+.about {
+  background: linear-gradient(135deg, #333333, #555555);
+  color: #f4f4f4;
+}
+
+.about .container {
+  max-width: 900px;
+  margin: auto;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+.about p {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+/* Keahlian */
+.skills {
+  background-color: #222222;
+}
+
+.skills-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+.skill {
+  background: linear-gradient(135deg, #444, #555);
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  color: #fff;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.skill:hover {
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 0 10px 20px rgba(255, 99, 71, 0.5);
+}
+
+.skill h3 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+}
+
+.skill ul li {
+  font-size: 1rem;
+  margin: 5px 0;
+}
+
+/* Proyek */
+.projects {
+  background-color: #333333;
+}
+
+.project-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+.project-card {
+  background: #444;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.project-card img {
+  width: 100%;
+  display: block;
+}
+
+.project-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(255, 99, 71, 0.5);
+}
+
+.project-info {
+  padding: 20px;
+  color: #fff;
+  text-align: center;
+}
+
+.project-info h3 {
+  margin-bottom: 10px;
+  font-size: 1.5rem;
+}
+
+.project-info p {
+  font-size: 1rem;
+  margin-bottom: 15px;
+}
+
+.btn-secondary {
+  background-color: #ff6347;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 25px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.btn-secondary:hover {
+  background-color: #e54b3c;
+  transform: translateY(-3px);
+}
+
+/* Kontak */
+.contact {
+  background: linear-gradient(135deg, #2c3e50, #34495e);
+}
+
+.contact-info {
+  list-style: none;
+  font-size: 1.2rem;
+  margin: 20px auto;
+  color: #fff;
+}
+
+.contact-info li {
+  margin: 10px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contact-info a {
+  color: #ffdd57;
+  margin-left: 10px;
+  transition: color 0.3s ease;
+}
+
+.contact-info a:hover {
+  color: #ff6347;
+}
+
+.contact-icons {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.contact-icons a {
+  display: inline-flex;
+  width: 50px;
+  height: 50px;
+  justify-content: center;
+  align-items: center;
+  background: #ff6347;
+  color: white;
+  border-radius: 50%;
+  margin: 0 10px;
+  font-size: 1.5rem;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.contact-icons a:hover {
+  transform: scale(1.2);
+  background-color: #ffdd57;
+}
+
+/* Fullscreen Section Styling */
+.section {
+  height: 100vh; /* Set tinggi penuh layar */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #fff;
+  position: relative;
+}
+
+#about {
+  background: linear-gradient(135deg, #ff6347, #e54b3c);
+}
+
+#skills {
+  background: linear-gradient(135deg, #2c3e50, #4ca1af);
+}
+
+#projects {
+  background: linear-gradient(135deg, #1f4037, #99f2c8);
+}
+
+#contact {
+  background: linear-gradient(135deg, #42275a, #734b6d);
+}
+
+.section h2 {
+  font-size: 4rem;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+.section p {
+  font-size: 1.5rem;
+  line-height: 1.8;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Smooth Scroll for Navigation */
+html {
+  scroll-behavior: smooth; /* Scroll halus saat pindah halaman */
+}
